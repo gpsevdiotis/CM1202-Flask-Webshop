@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if current_user.is_authenticated %}
+<br><br>
+<h1> Your Shopping Cart </h1>
+<br><br><br><br>
+<table class="tablecart">
+
+  <tr><th>Product</th><th>Quantity</th><th>£ Price</th><th>Total</th><th>Remove Product</th></tr>
+
+  {% for key, value in display_cart.items() %}
+  <tr>
+    <td>{{ value["title"] }}</td>
+    <td>{{ value["quantity"] }}</td>
+    <td>£ {{ "%.2f" % value["price"]}}</td>
+    <td>£ {{ "%.2f" % (value["quantity"] * value["price"])}}</td>
+
+    <td>
+      <form action="{{ url_for('delete_book', book_id=key|int) }}" method="POST">
+        <input class="" type="submit" value="Delete">
+      </form>
+    </td>
+  </tr>
+  
+  {% endfor %}
+  
+
+</table>
+<br><br><br><br><br><br><br><br><br>
+<h3>Number of items: {{ total_quantity }} </h3>
+<h3>Total: £{{ total }} </h3>
+
+<br>
+<a href="{{ url_for('checkout') }}" class="h1">Check Out</a>
+{% else %}
+  <br><h1>Please register to add an item to cart</h1>
+{% endif %}
+{% endblock content %}

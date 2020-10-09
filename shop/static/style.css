@@ -1,0 +1,170 @@
+body {
+  background-image: url("../static/img/wallpaper.jpg");
+  background-color: black; 
+  height: 100%; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  font-family:helvetica, sans-serif;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5); 
+}
+
+.logo{
+  position: fixed;
+  left: 10px;
+  top: 40px;
+  z-index: -1;
+}
+  
+.logo2{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+img {
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+}
+ 
+img:hover {
+	background-color: red;
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+}
+
+li {
+  float: left;
+  font-size: 20px
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 50px;
+  text-decoration: none;
+}
+
+li a2 {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 50px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+  color: #cac3b9;
+}
+
+h1 {
+  padding-left: 20px;
+  color: #cac3b9;
+  font-family: verdana;
+  font-size: 300%;
+}
+
+a.h1{
+  padding-left: 20px;
+  color: purple;
+  font-family: verdana;
+  font-size: 300%;
+}
+
+a.p2{
+	padding-left: 20px;
+  color: #cac3b9;
+  font-family: verdana;
+  font-size: 150%;
+}
+
+a.p2:hover{
+	padding-left: 20px;
+  color: white;
+  font-family: verdana;
+  font-size: 100%;
+}
+
+h3{
+  font-size:30px;
+}
+
+p {
+	padding-left: 20px;
+  color: white;
+  font-family: verdana;
+  font-size: 20px;
+}
+
+p1 {
+	padding-left: 20px;
+  color: purple;
+  font-family: verdana;
+  font-size: 30px;
+}
+
+p2 {
+	padding-left: 20px;
+  color: #cac3b9;
+  font-size: 20px;
+  font-family: verdana;
+}
+
+p:hover {
+	color: #cac3b9;
+}
+
+a {
+  text-decoration:none;
+  color:#000099;
+}
+
+a:hover {
+  color:#0cc3300;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  height: 50px;
+  background-color: #cac3b9;
+  color: black;
+  font-size:30px;
+}
+
+tr{
+  font-size:20px;
+}
+
+tr:hover {
+	color: black;
+	background-color: #cac3b9;}
+
+li.new{
+  position: fixed;
+  top: 40px;
+  left: 50px;
+  z-index: -1;
+  
+}

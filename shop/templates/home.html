@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<img class="logo" src="./static/img/logo.jpg" >
+<br><br><h1>Books</h1>
+  <button type="button" onclick="window.location.href='/?id=2'">Sort Price(high to low)</button>
+  <button type="button" onclick="window.location.href='/?id=1'"> Sort Price(low to high)</button><br><br>
+  {% for book in books %}
+  
+	{% if current_user.is_authenticated %}
+	
+	
+  <a href="{{ url_for('book', book_id=book.id) }}"><img src = "{{ url_for('static', filename='img/' + book.image_file) }}" ></a>
+    <a href="{{ url_for('book', book_id=book.id) }}">
+	<p> <strong>"{{ book.title }}" </strong><br> by <strong>{{ book.author.first_name }} {{ book.author.last_name}} </strong><br> <i> Price: </i> <u> £{{ book.price }} </u></p></a> 
+	<a class="p2" href="/add_to_cart/{{book.id}}">Add to Basket</a> <br><br><br>
+	{% else %}
+  <a href="{{ url_for('book', book_id=book.id) }}"><img src = "{{ url_for('static', filename='img/' + book.image_file) }}" ></a>
+  <a href="{{ url_for('book', book_id=book.id) }}">
+	<p> <strong>"{{ book.title }}" </strong><br> by <strong>{{ book.author.first_name }} {{ book.author.last_name}} </strong><br> <i> Price: </i> <u> £{{ book.price }} </u></p></a> 
+	<br><br><br>
+	{% endif %} 
+  {% endfor %}
+
+{% endblock content %}

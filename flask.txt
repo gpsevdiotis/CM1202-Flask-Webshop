@@ -1,0 +1,22 @@
+	Create the virtual environment:
+python -m venv venv
+
+activate it:
+	venv\Scripts\activate
+
+install the libraries we shall use in these labs:
+	python -m pip install -r requirements.txt
+
+
+To enable the debug mode, either use:
+> set FLASK_DEBUG="1"
+
+Tell Flask where to find your app:
+> set FLASK_APP=wsgi
+
+Start the development server:
+> flask run
+
+http://127.0.0.1:5000/
+
+Written by George Psevdiotis

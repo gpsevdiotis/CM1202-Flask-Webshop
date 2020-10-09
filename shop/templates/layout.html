@@ -1,0 +1,39 @@
+<!doctype html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <title>{{ title }}</title>
+  </head>
+
+  <body>
+    <div id="header"><ul>
+      <li><a href="{{ url_for('home') }}" >Home</a></li>
+      <li><a href="{{ url_for('about') }}" >About Us</a></li>
+    	{% if current_user.is_authenticated %}
+    	<li style="float:right"><a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+    	<li style="float:right"><a href="{{ url_for('cart_display') }}" >Shopping Basket </a></li>	
+    	<li style="float:right"><a2>Hello, {{ current_user.username }}!</a2></li>
+      {% else %}
+    	<li style="float:right"><a  href="{{ url_for('register') }}">Register</a></li>
+      <li style="float:right"><a  href="{{ url_for('login') }}">Login</a></li>
+    	<li style="float:right"><a2>Hello, Guest!</a2></li>
+      {% endif %}</ul>
+    </div>
+    
+    <div class="content">
+            {% block content %}
+            {% endblock %}
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class="new">
+                {% for message in messages %}
+                <li id="new"> {{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+        </div>
+  </body>
+</html>

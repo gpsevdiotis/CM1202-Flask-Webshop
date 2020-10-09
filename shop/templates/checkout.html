@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <h1>Order Total: £{{ total }} </h1>
+  <br><br><br><br>
+  <p1>Please enter a billing Address</p1> <br><br>
+  <div>
+    {{form.name.label}} {{form.name}}
+    {% for error in form.name.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+  {% endfor %}<br><br>
+  </div>
+  <div>
+    {{form.adrline1.label}} {{form.adrline1}}
+    {% for error in form.adrline1.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+  {% endfor %}<br><br>
+  </div>
+  <div>
+    {{form.adrline2.label}} {{form.adrline2}}
+    {% for error in form.adrline2.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}<br><br>
+  </div>
+  <div>
+    {{form.city.label}} {{form.city}}
+    {% for error in form.city.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}<br><br>
+  </div>
+  <div>
+    {{form.postcode.label}} {{form.postcode}}
+    {% for error in form.postcode.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}<br><br>
+  </div><br><br>
+  <p1>Please enter your card details to pay:</p1><br><br>
+  <div class="">
+    {{ form.cardnumber.label }} {{ form.cardnumber}}
+    {% for error in form.cardnumber.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}<br><br><br>
+  </div>
+  <div class="">
+    <table2>
+      <tr>
+        <th>{{ form.expirymonth.label }}</th>
+        <th>{{ form.expiryyear.label }}</th>
+      </tr>
+      <tr>
+        <th> {{ form.expirymonth}} </th>
+        <th> {{ form.expiryyear}} </th>
+      </tr>
+    </table2>
+  </div>
+  <div>
+    {% for error in form.expiryyear.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+    {% for error in form.expirymonth.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}<br><br>
+  </div>
+  <div class="">
+    {{ form.cardname.label }} {{ form.cardname}}
+    {% for error in form.cardname.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}<br><br>
+  </div>
+  <div class="">
+    {{ form.cvv.label }} {{ form.cvv}}
+    {% for error in form.cvv.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}<br><br>
+  </div>
+  <div class=""><br><br><br>
+    {{ form.submit() }}
+  </div>
+</form>
+
+{% endblock content %}
